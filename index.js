@@ -26,7 +26,8 @@ window.onload = function () {
 
 	const displayData = function (todo) {
 		const list = document.getElementById('content');
-		const isChecked = todo.checked ? 'done' : '';
+		const item = document.querySelector(`[data-key='${todo.id}']`);
+		const isChecked = todo._checked ? 'done' : '';
 		const node = document.createElement('li');
 		node.setAttribute('class', `todo-item ${isChecked}`);
 		node.setAttribute('data-key', todo.id);
@@ -35,15 +36,20 @@ window.onload = function () {
 <span>Title:${todo._title}</span><br>
 <span>${todo._description}</span><br>
 <span>${todo._duedate}</span><br>
-<label for = "${todo._id}">Checkbox</label>
-<input id = "${todo._id}" type = "checkbox" class = 'js-tick'><br>
+<label for = "${todo._id}" class = 'js-tick'>Checkbox</label>
+<input id = "${todo._id}" type = "checkbox" ><br>
 <button>Delete</button>
-`
-		list.append(node);
+`;
+		if (item) {
+			list.replaceChild(node, item);
+		}
+		else {
+			list.append(node);
+		}
 	}
 	const toggleDone = function (key) {
 		const index = todoItems.findIndex(item => item.id === Number(key));
-		todoItems[index].checked = !todoItems[index].checked;
+		todoItems[index]._checked = !todoItems[index]._checked;
 		displayData(todoItems[index]);
 
 	}
@@ -61,6 +67,7 @@ window.onload = function () {
 			const newTodo = new todo(title, description, duedate)
 			todoItems.push(newTodo);
 			displayData(newTodo);
+			console.log(newTodo);
 			clearField()
 		}
 
@@ -71,6 +78,7 @@ window.onload = function () {
 		if (event.target.classList.contains('js-tick')) {
 			const itemKey = event.target.parentElement.dataset.key;
 			toggleDone(itemKey);
+			console.log(todoItems);
 		}
 
 	})

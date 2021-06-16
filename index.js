@@ -11,8 +11,8 @@ window.onload = function () {
 		this._title = _title;
 		this._description = _description;
 		this._duedate = _duedate;
-		this.checked = false;
-		this.id = Date.now();
+		this._checked = false;
+		this._id = Date.now();
 
 
 	}
@@ -32,14 +32,20 @@ window.onload = function () {
 		node.setAttribute('data-key', todo.id);
 		node.innerHTML = `
 
-<span>Title:${todo.title}</span><br>
-<span>${todo.description}</span><br>
-<span>${todo.duedate}</span><br>
-<label for = "${todo.id}">Checkbox</label>
-<input id = "${todo.id}" type = "checkbox"><br>
+<span>Title:${todo._title}</span><br>
+<span>${todo._description}</span><br>
+<span>${todo._duedate}</span><br>
+<label for = "${todo._id}">Checkbox</label>
+<input id = "${todo._id}" type = "checkbox" class = 'js-tick'><br>
 <button>Delete</button>
 `
 		list.append(node);
+	}
+	const toggleDone = function (key) {
+		const index = todoItems.findIndex(item => item.id === Number(key));
+		todoItems[index].checked = !todoItems[index].checked;
+		displayData(todoItems[index]);
+
 	}
 
 	form.addEventListener('submit', event => {
@@ -54,12 +60,20 @@ window.onload = function () {
 		else {
 			const newTodo = new todo(title, description, duedate)
 			todoItems.push(newTodo);
+			displayData(newTodo);
 			clearField()
 		}
-		displayData(todoItems);
+
 	})
 
+	const list = document.querySelector('#content')
+	list.addEventListener('click', event => {
+		if (event.target.classList.contains('js-tick')) {
+			const itemKey = event.target.parentElement.dataset.key;
+			toggleDone(itemKey);
+		}
 
+	})
 
 }
 

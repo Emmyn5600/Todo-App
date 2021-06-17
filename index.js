@@ -4,7 +4,7 @@ window.onload = function () {
 	const duedate = document.getElementById('duedate')
 
 	const btn = document.getElementsByClassName('button')
-	const todoItems = [];
+	let todoItems = [];
 	const form = document.querySelector('form')
 
 	const todo = function (_title, _description, _duedate, _priority) {
@@ -26,11 +26,17 @@ window.onload = function () {
 
 	const displayData = function (todo) {
 		const list = document.getElementById('content');
-		const item = document.querySelector(`[data-key='${todo.id}']`);
+		const item = document.querySelector(`[data-key='${todo._id}']`);
+		if (todo.deleted) {
+			item.remove();
+			return;
+		}
+
+
 		const isChecked = todo._checked ? 'done' : '';
 		const node = document.createElement('li');
 		node.setAttribute('class', `todo-item ${isChecked}`);
-		node.setAttribute('data-key', todo.id);
+		node.setAttribute('data-key', todo._id);
 		node.innerHTML = `
 
 <span>Title:${todo._title}</span><br>
@@ -38,7 +44,7 @@ window.onload = function () {
 <span>${todo._duedate}</span><br>
 <label for = "${todo._id}" class = 'js-tick'>Checkbox</label>
 <input id = "${todo._id}" type = "checkbox" ><br>
-<button>Delete</button>
+<button class="delete-todo js-delete-todo">Delete</button>
 `;
 		if (item) {
 			list.replaceChild(node, item);
@@ -48,10 +54,19 @@ window.onload = function () {
 		}
 	}
 	const toggleDone = function (key) {
-		const index = todoItems.findIndex(item => item.id === Number(key));
+		const index = todoItems.findIndex(item => item._id === Number(key));
 		todoItems[index]._checked = !todoItems[index]._checked;
 		displayData(todoItems[index]);
 
+	}
+	const deleteTodo = function (key) {
+		const index = todoItems.findIndex(item => item._id === Number(key));
+		const todo = {
+			deleted: true,
+			...todoItems[index]
+		};
+		todoItems = todoItems.filter(item => item._id !== Number(key));
+		displayData(todo);
 	}
 
 	form.addEventListener('submit', event => {
@@ -80,8 +95,14 @@ window.onload = function () {
 			toggleDone(itemKey);
 			console.log(todoItems);
 		}
+		if (event.target.classList.contains('js-delete-todo')) {
+			const itemKey = event.target.parentElement.dataset.key;
+			deleteTodo(itemKey);
 
-	})
+		}
+
+	});
+
 
 }
 

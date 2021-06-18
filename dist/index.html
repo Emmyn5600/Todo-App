@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo App</title>
+    <script src="./print.bundle.js"></script>
+  </head>
+  <body>
+    <h1>Todo List</h1>
+    <div class="form-todo">
+      <label for="project-input">Project Name: </label><br />
+      <div class="projectname">
+      <input type="text" id="project-input" />
+      <button id="addProject">Add Project</button>
+    </div>
+    <br />
+    <form action="">
+      <label for="project">Project</label><br />
+      <select name="project" id="project">
+        <option value="Default">Defualt</option></select
+      ><br />
+      <label for="title">Title</label><br />
+      <input type="text" id="title" /><br />
+      <label for="description">Description</label><br />
+      <input type="text" id="description" /><br />
+      <label for="duedate">DueDate</label><br />
+      <input type="date" id="duedate" /><br />
+      <br />
+      <button type="submit" id="addList">Add lists</button>
+    </form>
+    </div>
+
+    <ul id="content"></ul>
+    <script src="./index.bundle.js"></script>
+  </body>
+</html>

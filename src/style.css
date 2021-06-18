@@ -1,0 +1,69 @@
+label {
+  color: red;
+  text-align: center;
+}
+
+#addProject {
+  margin-left: 20px;
+}
+
+h1 {
+  color: brown;
+  text-align: center;
+  font-weight: 600;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.projectname {
+  display: flex;
+}
+
+.form-todo {
+  margin-bottom: 50px;
+  width: 59%;
+  color: #000;
+  margin-left: 300px;
+  font-size: 20px;
+  text-align: left;
+  border-radius: 10px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  border: 1px solid #979797;
+  background-color: #ffd8a0;
+  padding: 1rem;
+}
+
+#project-input,
+#project,
+#title,
+#description,
+#duedate {
+  border-radius: 7px;
+  margin-bottom: 10px;
+  margin-top: 20px;
+  border: 1px solid #979797;
+  width: 40%;
+  height: 30px;
+}
+
+#addList,
+#addProject {
+  font-weight: 700;
+  color: #000;
+  text-align: center;
+  border-radius: 6px;
+  width: 170px;
+  height: 40px;
+  font-size: 15px;
+  text-transform: uppercase;
+  cursor: pointer;
+  margin-bottom: 10px;
+  background-color: #daf6e6;
+}
+
+#content {
+  background-color: #ffd8a0;
+  list-style-type: none;
+  display: flex;
+  justify-content: space-around;
+  height: 50%;
+}

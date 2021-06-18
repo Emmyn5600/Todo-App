@@ -8,16 +8,28 @@
     <script src="./print.bundle.js"></script>
   </head>
   <body>
+    <div>
+      <label for="project-input">Project Name</label><br />
+      <input type="text" id="project-input" /><br />
+      <br />
+      <button id="addProject">Add Project</button>
+    </div>
+    <br />
     <form action="">
-      <label for="title">Title</label>
+      <label for="project">Project</label><br />
+      <select name="project" id="project">
+        <option value="Default">Defualt</option></select
+      ><br />
+      <label for="title">Title</label><br />
       <input type="text" id="title" /><br />
-      <label for="description">Description</label>
+      <label for="description">Description</label><br />
       <input type="text" id="description" /><br />
-      <label for="duedate">DueDate</label>
+      <label for="duedate">DueDate</label><br />
       <input type="date" id="duedate" /><br />
-
-      <button type="submit">Add lists</button>
+      <br />
+      <button type="submit" id="addList">Add lists</button>
     </form>
+
     <ul id="content"></ul>
     <script src="./index.bundle.js"></script>
   </body>

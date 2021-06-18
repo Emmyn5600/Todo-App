@@ -11,9 +11,9 @@ export default function displayData(todo) {
 	const node = document.createElement('li');
 	node.setAttribute('class', `todo-item ${isChecked}`);
 	node.setAttribute('data-key', todo._id);
-	if (todo._project === "Default") {
+	if (todo._project === "Defualt") {
 		node.innerHTML = `
-
+<span>Project: ${todo._project}</span>
 <span>Title:${todo._title}</span><br>
 <span>${todo._description}</span><br>
 <span>${todo._duedate}</span><br>

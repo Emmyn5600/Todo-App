@@ -11,7 +11,6 @@ window.onload = function () {
 	let todoItems = [];
 	let projectName = [];
 	const form = document.querySelector('form')
-
 	const project = function (title) {
 		this.title = title;
 
@@ -91,6 +90,7 @@ window.onload = function () {
 
 	})
 
+
 	addProject.addEventListener('click', event => {
 		event.preventDefault();
 
@@ -109,6 +109,12 @@ window.onload = function () {
 
 
 	})
+
+
+
+
+
+
 	const list = document.querySelector('#content')
 	list.addEventListener('click', event => {
 		if (event.target.classList.contains('js-tick')) {

@@ -38,7 +38,7 @@ h1 {
   margin-top: 20px;
   border: 1px solid #979797;
   width: 40%;
-  height: 40px;
+  height: 30px;
 }
 
 #addList, #addProject {
@@ -53,4 +53,12 @@ h1 {
   cursor: pointer;
   margin-bottom: 10px;
   background-color: #daf6e6;
+}
+
+#content {
+  background-color: brown;
+  list-style-type:none;
+  display: flex;
+  justify-content: space-around;
+  height: 50%;
 }

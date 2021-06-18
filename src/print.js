@@ -11,7 +11,8 @@ export default function displayData(todo) {
 	const node = document.createElement('li');
 	node.setAttribute('class', `todo-item ${isChecked}`);
 	node.setAttribute('data-key', todo._id);
-	node.innerHTML = `
+	if (todo._project === "Default") {
+		node.innerHTML = `
 
 <span>Title:${todo._title}</span><br>
 <span>${todo._description}</span><br>
@@ -20,6 +21,18 @@ export default function displayData(todo) {
 <input id = "${todo._id}" type = "checkbox" ><br>
 <button class="delete-todo js-delete-todo">Delete</button>
 `;
+	}
+	else {
+		node.innerHTML = `
+<span>Project: ${todo._project}</span>
+<span>Title:${todo._title}</span><br>
+<span>${todo._description}</span><br>
+<span>${todo._duedate}</span><br>
+<label for = "${todo._id}" class = 'js-tick'>Checkbox</label>
+<input id = "${todo._id}" type = "checkbox" ><br>
+<button class="delete-todo js-delete-todo">Delete</button>`
+
+	}
 	if (item) {
 		list.replaceChild(node, item);
 	}
@@ -27,3 +40,4 @@ export default function displayData(todo) {
 		list.append(node);
 	}
 }
+

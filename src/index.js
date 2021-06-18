@@ -27,6 +27,7 @@ window.onload = function () {
 
 
 	}
+	
 	function clearField() {
 		title.value = '';
 		description.value = "";
@@ -130,6 +131,15 @@ window.onload = function () {
 
 	});
 
+	const start = (projects) => {
+		projectsDraw(projects);
+	  };
+	  
+	  if (typeof localStorage.getItem('projects') !== 'undefined' && localStorage.getItem('projects') != null) {
+		projects = JSON.parse(localStorage.getItem('projects'));
+	  }
+	  
+	  start(projects);
 
 }
 

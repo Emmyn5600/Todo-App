@@ -10,6 +10,7 @@ window.onload = function () {
 	const proTitle = document.getElementById('project-input');
 	let todoItems = [];
 	const projectName = [];
+	let stored_todo = JSON.parse(localStorage.getItem('todos'));
 	const form = document.querySelector('form');
 	const Project = function (title) {
 		this.title = title;
@@ -68,11 +69,13 @@ window.onload = function () {
 		} else {
 			const newTodo = new Todo(title, description, duedate, project);
 			todoItems.push(newTodo);
-			displayData(newTodo, project);
-			setItem('todos', newTodo);
+
+			displayData(newTodo);
+
 			console.log(newTodo);
 			clearField();
 		}
+		setItem('todos', todoItems);
 
 	});
 
@@ -81,14 +84,16 @@ window.onload = function () {
 
 		if (proTitle.value === '') {
 			alert('add title');
-		} else {
+		}
+		else {
 			const newProject = new Project(proTitle.value);
 			projectName.push(newProject);
 			addOption(newProject);
-			setItem('todos', newProject);
+
 			clearFieldPro();
 		}
-
+		setItem('pros', projectName);
+		getItemFromLocalStorage('pros');
 
 	});
 
@@ -106,21 +111,20 @@ window.onload = function () {
 	});
 
 	//trying for accessing data from local storage
-	const getItemFromLocalStorage = function () {
-		let project_name = JSON.parse(localStorage.getItem('pros'));
+	const getItemFromLocalStorage = function (names) {
+		let project_name = JSON.parse(localStorage.getItem(names));
 		//	let todos_item = JSON.parse(localStorage.getItem('todos'));
 		const project_list = document.createElement('li');
 		const lists = document.getElementById('content');
-
-
-
-
-
+		for (let i = 0; i < project_name.length; i++) {
+			project_list.innerHTML += project_name[i].title;
+			lists.appendChild(project_list);
+			console.log(project_name);
+		}
 	}
 	const setItem = function (name, arr) {
 		localStorage.setItem(name, JSON.stringify(arr));
 
 	}
-
-
+	displayData(stored_todo);
 };

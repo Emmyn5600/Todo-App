@@ -4,7 +4,7 @@ Creating a To Do list in using Javascript to create and maintain list of tasks f
 
 ## Todolist screenshot
 
-<img src="./img1.png" width="65%"/>
+<img src="./Img11.png" width="65%"/>
 
 In this project we build a To Do list app with vanilla javascript & webpack where you can:
 
@@ -52,6 +52,7 @@ If you want to repack the file
 - GitHub: [@emmyn5600](https://github.com/Emmyn5600)
 - Twitter: [@NSABIMA62253884](https://twitter.com/NSABIMA62253884)
 - LinkedIn: [@nsabimana-emmanuel-4276091b2](https://www.linkedin.com/in/nsabimana-emmanuel-4276091b2/)
+
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!

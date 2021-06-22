@@ -45,5 +45,6 @@ const deleteTask = function (project, task) {
   project.tasks.splice(index, 1);
 };
 export {
-  setDisplayNone, storeProjectInLocalStorage, storeTaskInLocalStorage, removeProjectFromLocalStorage, deleteTask,
+  setDisplayNone, storeProjectInLocalStorage, storeTaskInLocalStorage,
+  removeProjectFromLocalStorage, deleteTask,
 };

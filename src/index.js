@@ -1,8 +1,9 @@
 import './style.css';
 import { v4 as uuidv4 } from 'uuid';
-import { Project, Todo } from './logic.js';
+import { Project, Todo } from './logic';
 import {
-  setDisplayNone, storeProjectInLocalStorage, storeTaskInLocalStorage, removeProjectFromLocalStorage, deleteTask,
+  setDisplayNone, storeProjectInLocalStorage, storeTaskInLocalStorage,
+  removeProjectFromLocalStorage, deleteTask,
 } from './addProject';
 
 const proj = new Project();

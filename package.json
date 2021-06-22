@@ -34,6 +34,7 @@
   },
   "dependencies": {
     "babel-loader": "^8.2.2",
+    "bootstrap": "^5.0.1",
     "lodash": "^4.17.21",
     "postcss-selector-parser": "^6.0.6",
     "style-loader": "^2.0.0",

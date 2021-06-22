@@ -65,5 +65,19 @@ h1 {
   list-style-type: none;
   display: flex;
   justify-content: space-around;
-  height: 50%;
+  height: auto;
+}
+
+input::placeholder {
+  font-weight: bold;
+  font-style: italic;
+  opacity: 0.5;
+  color: #336699;
+  font-size: 15px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  margin-top: 20px;
+  margin-left: 50px;
+  border-radius: 7px;
+  border: 1px solid #979797;
 }

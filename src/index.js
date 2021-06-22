@@ -8,7 +8,7 @@ window.onload = function () {
 	const nameInput = document.createElement('input');
 	const addButton = document.createElement('button');
 	const div = document.createElement('div');
-	addButton.innerHTML = 'Add Project';
+	addButton.innerHTML = '<span style="font-size:18px;font-weight:700;color:#000;border-radius:6px;width:170px;height:40px;text-transform:uppercase;margin-bottom:20px;background-color:#daf6e6;">Add Project</span>';
 	nameInput.placeholder = 'Enter Project title';
 	div.classList.add('pros');
 	div.append(addButton, nameInput);
@@ -36,8 +36,8 @@ window.onload = function () {
 				card.innerHTML = `
 <div class = 'card-title'>
 <h5>Project name: ${project.title}</h5>
-<button class = "add-task" data='${myProject.head_id}'>Add task</button>
-<button class = "delete-task" data= '${myProject.body_id}'> Delete Project</button>
+<button class = "add-task btn btn-success" data='${myProject.head_id}'><span style="font-size:15px;font-weight:700;color:#000;border-radius:6px;width:170px;height:40px;text-transform:uppercase;margin-bottom:20px;">Add Task</span></button>
+<button class = "delete-task btn btn-danger" data= '${myProject.body_id}'><span style="font-size:15px;font-weight:700;color:#000;border-radius:6px;width:170px;height:40px;text-transform:uppercase;margin-bottom:20px;">Delete Project</span></button>
 </div>
 <div class = 'card-body' data='${cardBodyId}'>
 </div>
@@ -68,7 +68,7 @@ window.onload = function () {
                     <option value='low'>Low</option>
                     <option value='high'>High</option>
                 </select> 
-            <button type ='submit' class='submit-form' data='${submitId}'>Submit</button>
+            <button type ='submit' class='submit-form' data='${submitId}'><span style="font-size:20px;font-weight:700;color:#000;border-radius:6px;width:170px;height:40px;text-transform:uppercase;margin-bottom:20px;background-color:#daf6e6;">Submit</span></button>
  </form>
 `;
 				const submitForm = document.querySelector(`[data = '${submitId}']`);

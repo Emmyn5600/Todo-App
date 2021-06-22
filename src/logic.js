@@ -1,16 +1,22 @@
+import { v4 as uuidv4 } from 'uuid';
+
 const proTitle = document.getElementById('project-input');
 
-const Project = function (title) {
-	this.title = title;
-};
+class Project {
+	constructor(title) {
+		this.title = title;
+		this.tasks = [];
+		this.head_id = uuidv4();
+		this.body_id = uuidv4();
+	}
+	allProjects = [{ name: 'Example project', tasks: [{ name: 'example task' }] }];
+}
 
-const Todo = function (title, description, duedate, project = 'defualt') {
-	this.title = title;
-	this.description = description;
-	this.duedate = duedate;
-	this.checked = false;
-	this.project = project;
-	this.id = Date.now();
+const Todo = function (name, date, priority) {
+	this.name = name;
+	this.date = date;
+	this.priority = priority;
+	this.id = uuidv4();
 };
 
 

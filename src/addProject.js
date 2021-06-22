@@ -40,4 +40,8 @@ const removeProjectFromLocalStorage = (project) => {
 		}
 	});
 };
-const proj = new Project();
+const deleteTask = function (project, task) {
+	const index = project.tasks.indexOf(task);
+	project.tasks.splice(index, 1);
+}
+export { setDisplayNone, storeProjectInLocalStorage, storeTaskInLocalStorage, removeProjectFromLocalStorage, deleteTask }

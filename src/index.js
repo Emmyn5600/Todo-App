@@ -5,25 +5,6 @@ import { setDisplayNone, storeProjectInLocalStorage, storeTaskInLocalStorage, re
 const proj = new Project();
 window.onload = function () {
 	const content = document.getElementById('content')
-	const card = document.createElement('div');
-	card.classList.add('card');
-	card.innerHTML = `<div class = 'card-title'>
-<h3> Project name: ${proj.allProjects[0].name}</h3>
-<button class = 'add-task' disabled> Add task</button>
-<button class = 'delete-button' data =$ disabled>Delete Project</button>   
-</div>
-<div class = "card-body">
-<div class = 'card-item'>${proj.allProjects[0].tasks[0].name}| Due date :01-01-2222 | priority: high <button class = 'delete-button'>Delete</button></div>
-</div>
-`
-
-	content.appendChild(card);
-
-
-};
-
-const newProject = function () {
-	const content = document.getElementById('content');
 	const nameInput = document.createElement('input');
 	const addButton = document.createElement('button');
 	const div = document.createElement('div');
@@ -145,6 +126,11 @@ const newProject = function () {
 
 	})
 
-}
-newProject();
+
+};
+
+
+
+
+
 

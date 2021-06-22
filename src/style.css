@@ -58,14 +58,6 @@ h1 {
   background-color: #daf6e6;
 }
 
-#content {
-  background-color: #ffd8a0;
-  list-style-type: none;
-  display: flex;
-  justify-content: space-around;
-  height: auto;
-}
-
 input::placeholder {
   font-weight: bold;
   font-style: italic;
@@ -78,10 +70,15 @@ input::placeholder {
   margin-left: 50px;
   border: 1px solid #979797;
 }
-#content{
-display: grid;
-grid-template-columns: 1fr 1fr;
-width: 80%;
-margin-left: auto;
-margin-right: auto;
+
+#content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+body {
+  background-color: #ffd8a0;
 }

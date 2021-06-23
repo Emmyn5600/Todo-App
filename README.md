@@ -38,7 +38,7 @@ If you want to repack the file
 
 ## Live Link of the project
 
-[Live-Link](https://emmyn5600.github.io/Todo-App/)
+[Live-Link](https://todo5600.netlify.app/)
 
 ## Author
 

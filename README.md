@@ -1,10 +1,10 @@
-# Todo-Collab
+# Todo-List
 
 Creating a To Do list in using Javascript to create and maintain list of tasks for better time management
 
 ## Todolist screenshot
 
-<img src="./Img11.png" width="65%"/>
+<img src="./img11.png" width="65%"/>
 
 In this project we build a To Do list app with vanilla javascript & webpack where you can:
 
@@ -15,7 +15,8 @@ In this project we build a To Do list app with vanilla javascript & webpack wher
 
 - JavaScript
 - HTML
-- CSS
+- SCSS
+- bootstrap
 - Webpack
 
 ## Getting Started

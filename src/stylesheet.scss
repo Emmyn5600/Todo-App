@@ -1,0 +1,29 @@
+// @import "bootstrap";
+
+.main {
+  min-height: calc(100vh - 49.6px);
+}
+
+.nodec:hover {
+  text-decoration: none;
+}
+
+a:hover h5:hover {
+  background-color: rgb(55, 128, 97);
+  border-radius: 10px;
+  padding: 3px 0;
+  text-decoration: none;
+}
+
+.strikethrough {
+  text-decoration: line-through;
+  text-shadow: 0 0 8px #444;
+}
+
+.container {
+  background-color: #ffd8a0;
+}
+
+.text2 {
+  color: black;
+}

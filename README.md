@@ -1,6 +1,6 @@
 # Todo-List
 
-Creating a To Do list in using Javascript to create and maintain list of tasks for better time management
+This ToDo App made in Javascript and it is created to help people to create and maintain list of tasks for better time management, this project is built with HTML5, CSS3, Webpack, Bootstrap and JavaScript. 
 
 ## Todolist screenshot
 

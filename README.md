@@ -1,6 +1,6 @@
 # Todo-List
 
-This ToDo App made in Javascript and it is created to help people to create and maintain list of tasks for better time management, this project is built with HTML5, CSS3, Webpack, Bootstrap and JavaScript. 
+A personal task manager - dynamically rendered in JavaScript using the Webpack. Projects and tasks can be created and stored in Web browser's local storage.
 
 ## Todolist screenshot
 

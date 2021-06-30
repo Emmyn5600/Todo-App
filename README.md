@@ -40,6 +40,12 @@ If you want to repack the file
 
 [Live-Link](https://todo5600.netlify.app/)
 
+## Testing
+
+To check if the tests are working properly
+
+Type `npm run test`
+
 ## Author
 
 👤 **Addis Belete**

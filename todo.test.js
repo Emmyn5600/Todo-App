@@ -32,4 +32,19 @@ describe('Creating tasks and lists', () => {
 	});
 });
 
+describe('Setting localstorage up using json values', () => {
+	test('set localstorage up without an element and comparing', () => {
+		const liststasks = [];
+		expect(localstorage1()).toEqual(liststasks);
+		expect(localstorage1()).not.toEqual([1, 2]);
+	});
 
+	test('set localstorage up with an element and strigify it', () => {
+		const liststasks = [1, 2];
+		localStorage.setItem('liststore', JSON.stringify(liststasks));
+		expect(localstorage1()).toEqual(liststasks);
+		expect(localstorage1()).not.toEqual([]);
+
+		localStorage.clear();
+	});
+});

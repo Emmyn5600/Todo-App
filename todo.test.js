@@ -48,3 +48,44 @@ describe('Setting localstorage up using json values', () => {
 		localStorage.clear();
 	});
 });
+describe('Setting localstorage up and using multiple operations on the same', () => {
+	test('test & splice the first element in the objects array', () => {
+		const liststasks = [{
+			todos: [{ description: 'sjs', priority: 'Medium', status: false },
+			{ description: 'none', priority: 'Medium', status: true },
+			{ description: 'sjs', priority: 'Medium', status: false }],
+		}];
+
+		const liststasksupdated = [{
+			todos: [{ description: 'none', priority: 'Medium', status: true },
+			{ description: 'sjs', priority: 'Medium', status: false }],
+		}];
+
+		deletetasklogic(0, 0, liststasks);
+
+		expect(liststasks).toEqual(liststasksupdated);
+		expect(liststasks).not.toEqual([]);
+	});
+
+	test('Change status which was false to true', () => {
+		const liststasks = [{ todos: [{ description: 'sjs', priority: 'Medium', status: false }] }];
+
+		const liststasksupdated = [{ todos: [{ description: 'sjs', priority: 'Medium', status: true }] }];
+
+		checkboxtrue(liststasks, 0, 0);
+
+		expect(liststasks).toEqual(liststasksupdated);
+		expect(liststasks).not.toEqual([]);
+	});
+
+	test('Change status which was true to false', () => {
+		const liststasks = [{ todos: [{ description: 'sjs', priority: 'Medium', status: true }] }];
+
+		const liststasksupdated = [{ todos: [{ description: 'sjs', priority: 'Medium', status: false }] }];
+
+		checkboxfalse(liststasks, 0, 0);
+
+		expect(liststasks).toEqual(liststasksupdated);
+		expect(liststasks).not.toEqual([]);
+	});
+});

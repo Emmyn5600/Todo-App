@@ -100,3 +100,15 @@ describe('Create a list and push to localstorage', () => {
 	  localStorage.clear();
 	});
   });
+
+describe('Create a task and push the selected list on localstorage', () => {
+	createlist('list');
+	localStorage.setItem('selectedlist', 'list');
+	createtask('21-12-2021', 'task', 'cool', 'High');
+	const list = localstorage1();
+	test('initialize a list and push a task to it ', () => {
+	  expect(list[0].todos.length).toEqual(1);
+	  expect(list[0].todos.length).not.toEqual(2);
+	});
+	localStorage.clear();
+  });

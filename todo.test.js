@@ -112,3 +112,18 @@ describe('Create a task and push the selected list on localstorage', () => {
 	});
 	localStorage.clear();
   });
+
+describe('Create a task and edit it', () => {
+	createlist('list');
+	localStorage.setItem('selectedlist', 'list');
+	localStorage.setItem('selectedtask', 0);
+	createtask('21-12-2021', 'task', 'cool', 'High');
+	edittaskform('21-12-2021', 'Task-edited-well', 'cool', 'Low');
+	const list = localstorage1();
+	test('initialize a list and push a task to it ', () => {
+	  expect(list[0].todos[0].task).toEqual('Task-edited-well');
+	  expect(list[0].todos[0].task).not.toEqual('any text');
+	});
+	localStorage.clear();
+  });
+  

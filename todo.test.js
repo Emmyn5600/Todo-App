@@ -89,3 +89,14 @@ describe('Setting localstorage up and using multiple operations on the same', ()
 		expect(liststasks).not.toEqual([]);
 	});
 });
+
+describe('Create a list and push to localstorage', () => {
+	test('initialize a list and push it ', () => {
+	  const listtaks = 'cool';
+	  createlist(listtaks);
+	  const list = localstorage1();
+	  expect(list.length).toEqual(1);
+	  expect(list.length).not.toEqual(2);
+	  localStorage.clear();
+	});
+  });
